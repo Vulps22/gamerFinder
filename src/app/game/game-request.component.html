@@ -1,0 +1,28 @@
+<form #requestForm="ngForm">
+	<p>Before you send off your request. Please choose some filters for the group you want to play with.</p>
+	<div class="row">
+		<div class="col-md-12">
+			<span>Minimum Age: </span>
+			<input type="number" class="form-control" id="min" [(ngModel)]="request.min" name="min"  max="{{user.age}}" min="{{minAge}}" placeholder="Minimum Age...">
+			<div class="alert alert-danger" *ngIf="request.min < minAge">
+			  <strong>Minimum Age Too Low!</strong> You must choose a number greater than {{minAge}}
+			</div>
+			<div class="alert alert-danger" *ngIf="request.min > user.age">
+			  <strong>Minimum Age Too High!</strong> You cannot choose limit the minimum age to people older than you.
+			</div>
+			<span>Maximum Age: </span>
+			<input type="number" class="form-control" id="max" [(ngModel)]="request.max" name="max" max="{{maxAge}}" min="{{user.age}}" placeholder="Maximum Age...">
+			<div class="alert alert-danger" *ngIf="request.max < user.age">
+			  <strong>Maximum Age Too Low!</strong> You cannot limit the maximum age to people younger than you.
+			</div>
+			<div class="alert alert-danger" *ngIf="request.max > maxAge">
+			  <strong>Minimum Age Too High!</strong> You must choose a number lower than {{maxAge}}
+			</div>
+			<br>
+			<input type="checkbox" [checked]="request.mic" (change)="request.mic = !request.mic">
+			Must have Mic
+		</div>
+	</div>
+	<br>
+	<button type="submit" class="btn btn-primary btn-block btn-outline"(click)="onSubmit()">Submit</button>
+</form>

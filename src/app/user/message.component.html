@@ -1,0 +1,39 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-3" style="height: 70vh;">
+			<div *ngFor="let thread of threads" (click)="selectThread(thread)"class="thumbnail" style="color: black">
+				<h3>{{thread.target.username}}</h3><!-- <span class="pull-right">{{thread.latest.date}}</span>-->
+				<p>Click here to update this thread</p>
+			</div>
+		</div>
+		<div class="col-md-9 formPanel" style="height: 85vh; padding: 0px;" *ngIf="selected">
+			<div id="messages" class="messageScreen">
+			<a class="btn btn-success btn-outline btn-block" style="margin: 2%; width: 96%;" (click)="loadMore()" *ngIf="canLoad">Load More</a>
+			<br>
+				<div class="col-md-12">
+					<div *ngFor="let message of selectedThread.messages" style="color: black">
+						<div class="thumbnail pull-left" *ngIf="message.sender == selectedThread.target.id">
+							{{message.message}}
+							
+						</div>
+						
+						<div class="thumbnail pull-right" *ngIf="message.sender != selectedThread.target.id">
+							{{message.message}}
+						</div>
+						<br>
+						<br>
+						<br>
+					</div>
+					
+
+				</div>
+				<div style="position: absolute; bottom: 0px; width: 100%; background-color: white; height: 100px;">
+					<textarea [(ngModel)]="defaultValue" class="form-control" style="height:98%; padding: 1%;" (keyup)="shouldSend($event)"></textarea>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-9" *ngIf="!selected">
+			<h2>Send private messages to get to know new gamers before accepting their request</h2>
+		</div>
+	</div><!--end row-->
+</div><!--end container-->

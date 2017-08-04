@@ -1,0 +1,73 @@
+<!-- Static navbar -->
+<div *ngIf="isLoggedIn()">
+  <nav class="navbar navbar-play">
+	<div class="container-fluid">
+	  <div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		  <span class="sr-only">Toggle navigation</span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" routerLink="">Gamer Finder <sup class="label label-success">BETA</sup></a>
+	  </div>
+	  <div id="navbar" class="navbar-collapse collapse">
+		<ul class="nav navbar-nav">
+		  <li routerLinkActive="active"><a routerLink="">Home</a></li>
+		  <li routerLinkActive="active"><a routerLink="/games">Games</a></li>
+		  <li routerLinkActive="active"><a routerLink="/about">About</a></li>
+		  <li routerLinkActive="active"><a routerLink="/user">profile</a></li>
+		  <li routerLinkActive="active"><a routerLink="/messages">Messages</a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+		  
+		  <li class="dropdown" dropdown>
+			<a href="javascript:void(0)" dropdown-open>Logged in as: {{user.username}} <b class="caret"></b></a>
+			<ul class="dropdown-menu" dropdown-not-closable-zone>
+			  <!--<li>
+				<!--<user-cp></user-cp>
+			  </li>
+			  <li class="divider"></li>-->
+			  <li style="text-align: center;"><a (click)="logout()" style="background: none; color: white;">Not {{user.username}}? Logout</a></li>
+			</ul>
+		  </li>
+		</ul>
+	  </div><!--/.nav-collapse -->
+	</div><!--/.container-fluid -->
+  </nav>
+</div>	
+
+<!-- Static navbar -->
+<div *ngIf="!isLoggedIn()">
+  <nav class="navbar navbar-play">
+	<div class="container-fluid">
+	  <div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		  <span class="sr-only">Toggle navigation</span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" routerLink="">Gamer Finder <sup class="label label-success">BETA</sup></a>
+	  </div>
+	  <div id="navbar" class="navbar-collapse collapse">
+		<ul class="nav navbar-nav">
+			<li routerLinkActive="active"><a routerLink="">Home</a></li>
+			<li routerLinkActive="active"><a routerLink="/games">Games</a></li>
+			<li routerLinkActive="active"><a routerLink="/about">About</a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li>
+				<a href="http://gamerfinder.net/classes/login.php"><img src="https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_01.png"></a>
+			</li>
+		</ul>
+	  </div><!--/.nav-collapse -->
+	  
+	</div><!--/.container-fluid -->
+  </nav>
+</div>
+<div class="row">
+	<div class="alert alert-warning col-md-6 col-md-push-3">
+		<strong>NOTE:</strong> Gamer Finder is in it's open Beta stages. You may experience bugs and incomplete features.
+	</div>	    
+</div>

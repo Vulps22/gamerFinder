@@ -1,1 +1,254 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+	background-color: #000e4f!important;
+	color: white!important;
+}
+
+.formPanel{
+	background-color: #363969;
+	padding-top: 2%;
+	padding-left: 1%;
+	padding-bottom: 5%;
+}
+
+.messageScreen{
+	overflow:auto;
+	height: 70vh;
+	padding-top: 2%;
+	padding-bottom: 55px;
+}
+
+.centerBlock {
+  display: table;
+  margin: auto;
+}
+
+.jumbotron{
+	background-color: #000521!important;
+}
+.sidebar{
+	background-color: #363969;
+	margin-top: -20px;
+	height: 100vh;
+}
+
+@media only screen and (min-width : 481px) {
+   .flex-row.row {
+	 display: flex;
+	 flex-wrap: wrap;
+   }
+   .flex-row.row > [class*='col-'] {
+	 display: flex;
+	 flex-direction: column;
+   }
+  .flex-row.row:after, 
+  .flex-row.row:before {
+	 display: flex;
+  }
+}
+
+.flex-row .jumbotron,
+.flex-row .caption {
+  flex:1 0 auto;
+  flex-direction:column;
+}
+.flex-text {
+  flex-grow:1
+}
+.flex-row img {
+  height:auto;
+  width:100%
+}
+
+
+
+/*Nav bar styles*/
+.navbar-play {
+  background-color: #363969;
+  border-color: #1b1c29;
+}
+.navbar-play .navbar-brand {
+  color: #d4d8e4;
+}
+.navbar-play .navbar-brand:hover,
+.navbar-play .navbar-brand:focus {
+  color: #e4e6f3;
+}
+.navbar-play .navbar-text {
+  color: #d4d8e4;
+}
+.navbar-play .navbar-nav > li > a {
+  color: #d4d8e4;
+}
+.navbar-play .navbar-nav > li > a:hover,
+.navbar-play .navbar-nav > li > a:focus {
+  color: #e4e6f3;
+}
+.navbar-play .navbar-nav > li > .dropdown-menu {
+  background-color: #363969;
+}
+.navbar-play .navbar-nav > li > .dropdown-menu > li > a {
+  color: #d4d8e4;
+}
+.navbar-play .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-play .navbar-nav > li > .dropdown-menu > li > a:focus {
+  color: #e4e6f3;
+  #background-color: #1b1c29;
+}
+.navbar-play .navbar-nav > li > .dropdown-menu > li.divider {
+  background-color: #1b1c29;
+}
+.navbar-play .navbar-nav .open .dropdown-menu > .active > a,
+.navbar-play .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar-play .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #e4e6f3;
+  background-color: #1b1c29;
+}
+.navbar-play .navbar-nav > .active > a,
+.navbar-play .navbar-nav > .active > a:hover,
+.navbar-play .navbar-nav > .active > a:focus {
+  color: #e4e6f3;
+  background-color: #1b1c29;
+}
+.navbar-play .navbar-nav > .open > a,
+.navbar-play .navbar-nav > .open > a:hover,
+.navbar-play .navbar-nav > .open > a:focus {
+  color: #e4e6f3;
+  background-color: #1b1c29;
+}
+.navbar-play .navbar-toggle {
+  border-color: #1b1c29;
+}
+.navbar-play .navbar-toggle:hover,
+.navbar-play .navbar-toggle:focus {
+  background-color: #1b1c29;
+}
+.navbar-play .navbar-toggle .icon-bar {
+  background-color: #d4d8e4;
+}
+.navbar-play .navbar-collapse,
+.navbar-play .navbar-form {
+  border-color: #d4d8e4;
+}
+.navbar-play .navbar-link {
+  color: #d4d8e4;
+}
+.navbar-play .navbar-link:hover {
+  color: #e4e6f3;
+}
+
+@media (max-width: 767px) {
+  .navbar-play .navbar-nav .open .dropdown-menu > li > a {
+    color: #d4d8e4;
+  }
+  .navbar-play .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-play .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #e4e6f3;
+  }
+  .navbar-play .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-play .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-play .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #e4e6f3;
+    background-color: #1b1c29;
+  }
+}
+
+.navbar{
+	border-radius: 0px!important;
+}
+
+.nav > li > a:focus,
+.nav > li > a:hover{
+	background-color: #191d5f!important;
+}
+
+/*END OF NAV STYLES*/
+
+
+/*FORM STYLES*/
+.form-control{
+	border-radius: 0px!important;
+}
+/*END OF FORM STYLES*/
+
+/*BUTTON STYLES*/
+
+.btn-play {
+  background-color: #000570;
+  border-color: #000570;
+}
+.btn-play:hover,
+.btn-play:focus,
+.btn-play:active,
+.btn-play.active {
+  background-color: #000570;
+  border-color: #000570;
+}
+.btn-play.disabled:hover,
+.btn-play.disabled:focus,
+.btn-play.disabled:active,
+.btn-play.disabled.active,
+.btn-play[disabled]:hover,
+.btn-play[disabled]:focus,
+.btn-play[disabled]:active,
+.btn-play[disabled].active,
+fieldset[disabled] .btn-play:hover,
+fieldset[disabled] .btn-play:focus,
+fieldset[disabled] .btn-play:active,
+fieldset[disabled] .btn-play.active {
+  background-color: #000570;
+  border-color: #000570;
+}
+
+
+
+
+.btn-outline {
+    background-color: transparent;
+    color: inherit;
+    transition: all .5s;
+}
+
+.btn-primary.btn-outline {
+    color: #428bca;
+	background: none;
+}
+
+.btn-success.btn-outline {
+    color: #5cb85c;
+	background: none;
+}
+
+.btn-info.btn-outline {
+    color: #5bc0de;
+	background: none;
+}
+
+.btn-warning.btn-outline {
+    color: #f0ad4e;
+	background: none;
+}
+
+.btn-danger.btn-outline {
+    color: #d9534f;
+	background: none;
+}
+.btn-play.btn-outline {
+    color: #000570;
+	background: none;
+}
+
+.btn-primary.btn-outline:hover,
+.btn-success.btn-outline:hover,
+.btn-info.btn-outline:hover,
+.btn-warning.btn-outline:hover,
+.btn-danger.btn-outline:hover,
+.btn-play.btn-outline:hover {
+    color: #fff;
+}
+
+/*END OF BUTTON STYLES*/
+
+.dropdown-menu{
+	min-width: 200px!important;
+}

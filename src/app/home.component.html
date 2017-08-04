@@ -1,0 +1,18 @@
+<div class="container">
+      <div class="row">
+		<div class="col-md-12">
+			<h3>Most Requested Games</h3>
+			<div class="row flex-row">
+				<div *ngFor="let game of games" class="col-md-4">
+					<div class="jumbotron" (click)="gameClicked(game.id)">
+						<img src="http://cdn.edgecast.steamstatic.com/steam/apps/{{game.steamID}}/header.jpg" style="width: 100%; height: auto;"/>
+						<h3 style="text-align: center">{{game.name}}</h3>
+						<p *ngIf="game.count > 1" style="text-align: center">{{game.count}} people want to play</p>
+						<p *ngIf="game.count == 1" style="text-align: center">1 person wants to play</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+    </div> <!-- /container --> <!-- /container -->

@@ -1,0 +1,75 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-1">
+		</div>
+		
+		<div class="col-md-5">
+		<br>
+		<br>
+		<br>
+		<div class="formPanel" style="padding-right: 5%; padding-left: 5%;">
+			<h1>Create an Account</h1>
+			<form #registerForm="ngForm">
+			<div class="input-group form-group">
+				<span class="input-group-addon">Username</span>
+				<input type="text" class="form-control" id="username" [(ngModel)]="register.username" name="username" (change) = "userExists()" placeholder="Username...">
+			</div>
+			<div class="input-group form-group">
+				<span class="input-group-addon">Password</span>
+				<input type="password" class="form-control" id="password" [(ngModel)]="register.password" name="password" placeholder="Password...">
+			</div>
+			<div class="input-group form-group">
+				<span class="input-group-addon">Email</span>
+				<input type="email" class="form-control" id="email" [(ngModel)]="register.email" name="email" (change) = "emailExists()" placeholder="email...">
+			</div>
+				<!--<div class="input-group form-group">
+				<span class="input-group-addon">SteamID64</span>
+			   <input type="text" class="form-control" id="steamid" [(ngModel)]="register.steamID" name="steamid" placeholder="SteamID">
+			   <span class="input-group-btn">
+					<a (click)="showSteamInstruction = true" class="btn btn-warning">?</a>
+			   </span>
+			</div>-->
+			<div class="input-group form-group">
+				<span class="input-group-addon">D.o.B</span>
+				<input type="date" class="form-control" id="date" [(ngModel)]="register.dob" name="date" placeholder="Date Of Birth" (change) = "checkAge()">
+				
+			</div>
+			<div class="input-group form-group">
+				<span class="input-group-addon">
+					<input type="checkbox" [checked]="agreed" (change)="agreed = !agreed">
+				</span>
+				<span class="input-group-addon">
+					I agree to the <a href="http://gamerfinder.net/policies.pdf" target="_blank">Privacy Policy & Terms of Use</a>
+				</span>
+			</div>
+			<div class="alert alert-danger" *ngIf="showError">
+				<p>{{errorMessage}}</p>
+			</div>
+			<br>
+				<button type="submit" class="btn btn-primary btn-block btn-outline"(click)="doRegistration()">Submit and Connect to Steam</button>
+			</form>
+			</div>
+		</div><!--end column 5-->
+		<div *ngIf="showSteamInstruction" class="col-md-4" style="font-size: 18px;">
+			<h3>How to find your SteamID64</h3>
+			<p>If you do not know your SteamID64, You can look it up by entering your username at <a href="http://steamid.io" style="color: white; text-decoration: underline;">steam.io</a>.</p>	
+			<p>Sometimes the user you find is not your account. to be certain, Game Finder recommends signing in to steam through steam.io for the most accurate results.</p>
+		</div><!--end column 4-->
+		<div class="col-md-4">
+			<br>
+			<br>
+			<br>
+			<div class="formPanel">
+				<h3 style="text-align: center">Why use Gamer Finder?</h3>
+				<br>
+				<ul style="font-size: 14px;">
+					<li>Find new friends for the games you love</li>
+					<li>Rediscover multiplayer games you once loved</li>
+					<li>Discover new multiplayer games</li>
+					<li>See which games are most popular</li>
+				</ul>
+				<img src="http://localhost:80/play/responsive.png" width="100%"/>
+			</div>
+		</div><!--end column 3-->
+	</div><!--end row-->
+</div><!--end container-->

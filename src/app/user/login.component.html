@@ -1,0 +1,10 @@
+<form #loginForm="ngForm" style="padding-left: 5%; padding-right: 5%;">
+
+<input type="text" class="form-control" id="username" [(ngModel)]="model.username" name="username" placeholder="Username...">
+
+<input type="text" class="form-control" id="password" [(ngModel)]="model.pass" name="pass" placeholder="Password...">
+
+<br>
+	<button type="submit" class="btn btn-primary btn-block btn-outline"(click)="onSubmit()">Submit</button>
+</form>
+

@@ -1,0 +1,47 @@
+<div class="container">
+
+	<div class="row">
+		<div class="col-md-5">
+			<h1 class="centerBlock">{{game.name}}</h1>
+			<img src="http://cdn.edgecast.steamstatic.com/steam/apps/{{game.steamID}}/header.jpg" style="width: 100%; height: auto;"/>
+			<a href="http://store.steampowered.com/app/{{game.steamID}}"class="btn btn-block btn-primary btn-outline">View Steam Page</a>
+			<br>
+			<br>
+			<br>
+			<div *ngIf="!showForm">
+				<button *ngIf="canSubmit" class="btn btn-block btn-success btn-outline"(click)= "showForm = true">{{btnTxt}}</button>
+				<button *ngIf="!canSubmit" class="btn btn-block btn-success btn-outline">{{btnTxt}}</button>
+				<button class="btn btn-block btn-danger btn-outline" (click)= "flagGame()">This is not a multiplayer game</button>
+			</div>
+			<div *ngIf="showForm">
+			<request-form [id]="game.id" (show) = "toggleForm($event)"></request-form>
+		</div>
+		</div>
+		<div>
+			<div class="col-md-7">
+				<h3 class="centerBlock">&nbsp;</h3>
+				<br>
+				<div class="thumbnail" *ngFor="let request of requests">
+					<a [routerLink]="['/user', request.user.id]">
+					<div class="row">
+					
+						<div class="col-md-6">
+							<h3 style="color: black">{{request.user.username}} wants to play.</h3>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3 offset-3">
+							<p style="color: black">posted: {{request.since}}</p>
+						</div>
+					</div>
+					</a>
+				</div>
+			</div>
+			<div *ngIf="requests.length == 0"  class="col-md-7">
+				<h2 class="centerBlock">No Requests Available For This Game</h2>
+			</div>
+		</div>
+	</div>
+		
+
+</div>
