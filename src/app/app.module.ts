@@ -5,7 +5,7 @@ import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
 import { HttpModule } from '@angular/http';
 import { FormsModule }   from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-
+import { CollapseModule } from 'ngx-bootstrap';
 
 
 import 'rxjs/add/operator/toPromise';
@@ -16,6 +16,7 @@ import { PageNotFoundComponent } from './page-not-found.component'
 import { HomePageComponent } from './home.component'
 import { AboutViewComponent } from './about.component'
 import { AppComponent } from './app.component';
+import { ChangeLogComponent } from './change-log.component'
 
 import { GameModule } from './game/game.module';
 import { UserModule } from './user/user.module';
@@ -27,7 +28,8 @@ import { UserModule } from './user/user.module';
 	navbarComponent,
 	PageNotFoundComponent,
 	HomePageComponent,
-	AboutViewComponent
+	AboutViewComponent,
+	ChangeLogComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,7 @@ import { UserModule } from './user/user.module';
 	FormsModule,
 	GameModule,
 	UserModule,
+	CollapseModule,
 	AppRoutingModule
   ],
   providers: [],

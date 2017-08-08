@@ -10,7 +10,7 @@ import { User } from './user/User';
   templateUrl: './navbar.component.html'
 })
 export class navbarComponent {
-	
+	isCollapsed = true;
 	user: User;
 	
 	ngOnInit(){
