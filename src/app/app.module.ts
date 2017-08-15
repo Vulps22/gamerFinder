@@ -44,10 +44,4 @@ import { UserModule } from './user/user.module';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-
-	
-
-
-	}
-platformBrowserDynamic().bootstrapModule(AppModule);
+export class AppModule {}

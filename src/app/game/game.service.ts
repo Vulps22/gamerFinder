@@ -3,6 +3,10 @@ import { Headers, Http } from '@angular/http';
 import { RequestOptions } from '@angular/http';
 import { URLSearchParams } from '@angular/http';
 
+import 'rxjs/add/operator/do'; 
+import 'rxjs/add/operator/map'; 
+import 'rxjs/add/operator/catch'; 
+
 import { Game } from './Game';
 import { Request } from './request';
 

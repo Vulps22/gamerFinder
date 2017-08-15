@@ -4,6 +4,10 @@ import { RequestOptions } from '@angular/http';
 import { URLSearchParams } from '@angular/http';
 import { Router } from '@angular/router';
 
+import 'rxjs/add/operator/do'; 
+import 'rxjs/add/operator/map'; 
+import 'rxjs/add/operator/catch'; 
+
 import { User } from './User';
 import { Register } from './Register';
 import { Message } from './Message';
@@ -118,7 +122,6 @@ export class UserService {
 		let SERVICE_URL = "http://gamerfinder.net/classes/index.php?fn=messageGetThreads";
 		
 		let tempPromise = this.http.get(SERVICE_URL, new RequestOptions({"search": params}))
-			.do(data=>{})
 			.map(response=> <Thread>response.json())
 			.catch(this.handleError);
 		return tempPromise.toPromise();
@@ -133,8 +136,7 @@ export class UserService {
 		let SERVICE_URL = "http://gamerfinder.net/classes/index.php?fn=messageGetThread";
 		
 		let tempPromise = this.http.get(SERVICE_URL, new RequestOptions({"search": params}))
-			.do(data=>{})
-			.map(response=> <Message[]>response.json())
+			
 			.catch(this.handleError);
 		return tempPromise.toPromise();
 		
