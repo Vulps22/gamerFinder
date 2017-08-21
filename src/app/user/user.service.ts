@@ -134,10 +134,11 @@ export class UserService {
 		params.set('page', page);
 	
 		let SERVICE_URL = "http://gamerfinder.net/classes/index.php?fn=messageGetThread";
-		
 		let tempPromise = this.http.get(SERVICE_URL, new RequestOptions({"search": params}))
-			
-			.catch(this.handleError);
+		.do(data=>{})
+		.map(response=>response.json())
+		.catch(this.handleError);
+		
 		return tempPromise.toPromise();
 		
 	}
@@ -155,6 +156,17 @@ export class UserService {
 			.catch(this.handleError);
 		return tempPromise.toPromise();
 		
+	}
+	createThread(uid, tid){
+		let params: URLSearchParams = new URLSearchParams();
+		params.set('user', uid);
+		params.set('target', tid);
+	
+		let SERVICE_URL = "http://gamerfinder.net/classes/index.php?fn=messageCreate";
+		
+		let tempPromise = this.http.get(SERVICE_URL, new RequestOptions({"search": params}))
+		.catch(this.handleError);
+		return tempPromise.toPromise();
 	}
 	getRequestsFromUser(id){
 		let params: URLSearchParams = new URLSearchParams();

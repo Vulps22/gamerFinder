@@ -52,7 +52,7 @@ export class GameViewComponent {
 		if(this.user == undefined){
 			this.user = new User("", "", "", "", "-1");
 		}
-		this.gameService.getRequestsForGame(id, this.user.age).then((requests: Request[]) =>{
+		this.gameService.getRequestsForGame(id, this.user.age).then(requests=>{
 			for(let r of requests){
 				console.log(r);
 				this.userService.getUser(r.userID).then(data => {
@@ -61,7 +61,9 @@ export class GameViewComponent {
 						this.canSubmit = false;
 						this.btnTxt = "You have already made a request. since: " + r.since;
 					}
-					this.requests.push(new Request(r.id, r.appID, r.userID, r.min, r.max, r.since, user));
+					console.log("///////////");
+					console.log(r);
+					this.requests.push(new Request(r.id, r.appID, r.userID, r.min, r.max, r.since, user, undefined, r.needMic));
 				});
 			  
 			}

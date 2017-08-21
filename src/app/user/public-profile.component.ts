@@ -14,13 +14,21 @@ import { UserService } from './user.service';
 export class PublicProfileViewComponent{
 	user: User;
 	requests = new Array();
-	
+	isLoggedIn = false;
+	localUser: User;
 	constructor(private userService: UserService, private router: Router, private route: ActivatedRoute){}
 	
 	ngOnInit(){
 		this.route.params.subscribe(params=>{
 			this.doSetup(params.id);
 		})
+		
+		if(localStorage.getItem("user")){
+			let u = localStorage.getItem("user");
+			let user = JSON.parse(u);
+			this.localUser = new User(user.id, user.username, user.email, user.steamID, user.age);
+			this.isLoggedIn = true;
+		}
 	}
 	
 	doSetup(id){
@@ -40,4 +48,9 @@ export class PublicProfileViewComponent{
 		});
 	}
 	
+	doContact(){
+		this.userService.createThread(this.localUser.id, this.user.id).then(data=>{
+			this.router.navigate(['/messages'])
+		});
+	}
 }

@@ -14,7 +14,7 @@ export class MessageViewComponent{
 	user;
 	page;
 	selected = false;
-	canLoad = true;
+	canLoad = false;
 	defaultValue: string = '';
 
 	constructor(private userService: UserService, private router: Router){}
