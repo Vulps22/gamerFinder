@@ -16,7 +16,7 @@ import { UserService } from './user.service';
 })
 export class MemberHomeComponent{
 	user: User;
-	tabSelected = "1";
+	tabSelected = 1;
 	requests = new Array();
 	rToDel = null;
 	constructor(private gameService: GameService, private userService: UserService, private router: Router){}
