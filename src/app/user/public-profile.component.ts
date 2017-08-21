@@ -13,7 +13,7 @@ import { UserService } from './user.service';
 })
 export class PublicProfileViewComponent{
 	user: User;
-	requests = new Array();;
+	requests = new Array();
 	
 	constructor(private userService: UserService, private router: Router, private route: ActivatedRoute){}
 	
@@ -36,6 +36,7 @@ export class PublicProfileViewComponent{
 				let game = new Game(request.game.id, request.game.name, request.game.steamid, undefined, undefined, !request.game.display);
 				this.requests.push(new Request(request.id, request.appID, request.userID, request.minAge, request.maxAge, request.since, undefined, game, request.needMic));
 			}
+			console.log(this.requests);
 		});
 	}
 	

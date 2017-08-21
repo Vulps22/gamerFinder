@@ -4,9 +4,45 @@
 		<div class="col-md-3">
 			<h1>{{user.username}}</h1>
 			<p>Total Games:</p>
+			<a class="btn btn-outline btn-block" (click)="tabSelected = 1" [ngClass]="{'btn-success': tabSelected == 1, 'btn-primary': tabSelected !=1}">Show Games</a>
+			<a class="btn btn-outline btn-block" (click)="tabSelected = 2" [ngClass]="{'btn-success': tabSelected == 2, 'btn-primary': tabSelected !=2}">Show Requests</a>
 		</div>
 		<div class="col-md-9">
-			<game-list></game-list>
+			<div *ngIf="tabSelected == 1">
+				<game-list></game-list>
+			</div>
+			<div *ngIf="tabSelected == 2">
+				<div *ngFor="let request of requests" style="color: black">
+					<div *ngIf="!request.game.hidden" class="thumbnail" style="color: black" >
+						<div class="row">
+							<div class="col-md-3">
+								<img #image src="http://cdn.edgecast.steamstatic.com/steam/apps/{{request.game.steamID}}/header.jpg" style="width: 100%; height: auto;" (error)="game.hidden = true">
+							</div>
+							<div class="col-md-9">
+								<div class="row">
+									<div class="col-md-9">
+										<h2>
+											{{request.game.name}}
+											<span *ngIf="!request.mic" class="pull-right"><i class="fa fa-microphone-slash" aria-hidden="true"></i></span>
+											<span *ngIf="request.mic" class="pull-right"><i class="fa fa-microphone" aria-hidden="true"></i></span>
+										</h2>
+									</div>
+									<div class="col-md-3">
+									<br>
+										<a class="btn btn-danger btn-block fa fa-trash" *ngIf="rToDel != request.id" aria-hidden="true" (click)="rToDel = request.id">&nbsp;&nbsp;Delete</a>
+										<a class="btn btn-warning btn-block fa fa-trash" *ngIf="rToDel == request.id" aria-hidden="true" (click)="doDelete()">&nbsp;&nbsp;Are You Sure?</a>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<p>Wants to play with: {{request.min}} years - {{request.max}} years<span class="pull-right">Since: {{request.since}}</span></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 

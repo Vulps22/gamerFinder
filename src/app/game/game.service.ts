@@ -61,6 +61,17 @@ export class GameService {
 		return tempPromise.toPromise();
 	}
 	
+	deleteRequest(id){
+		 console.log("=========DeleteRequestParams==========")
+		console.log(id); 
+		let params: URLSearchParams = new URLSearchParams();
+		params.set('id', id);
+	
+		let SERVICE_URL = "http://gamerfinder.net/classes/index.php?fn=requestDel";
+		let tempPromise = this.http.get(SERVICE_URL, new RequestOptions({"search": params}))
+		return tempPromise.toPromise();
+	}
+	
 	getRequestsForGame(id, age){
 		let params: URLSearchParams = new URLSearchParams();
 		params.set('id', id);

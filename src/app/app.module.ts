@@ -12,6 +12,7 @@ import 'rxjs/add/operator/toPromise';
 
 import { AppRoutingModule } from './app-routing.module';
 import { navbarComponent } from './navbar.component'
+import { footerComponent } from './footer.component'
 import { PageNotFoundComponent } from './page-not-found.component'
 import { HomePageComponent } from './home.component'
 import { AboutViewComponent } from './about.component'
@@ -26,6 +27,7 @@ import { UserModule } from './user/user.module';
   declarations: [
     AppComponent,
 	navbarComponent,
+	footerComponent,
 	PageNotFoundComponent,
 	HomePageComponent,
 	AboutViewComponent,
