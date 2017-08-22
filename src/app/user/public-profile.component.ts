@@ -15,6 +15,9 @@ export class PublicProfileViewComponent{
 	user: User;
 	requests = new Array();
 	isLoggedIn = false;
+	isReporting = false;
+	theReason = 1;
+	reasons = [{id: 1, name: "Spamming"}, {id: 2, name: "Bullying"}, {id: 3, name: "Innapropriate Behaviour"}, {id: 4, name: "Lying About Age"}, {id: 5, name: "Duplicate Account/Invalid Steam Account"}, {id: 6, name: "Hate Speech/Discrimination"}, ]
 	localUser: User;
 	constructor(private userService: UserService, private router: Router, private route: ActivatedRoute){}
 	
@@ -51,6 +54,13 @@ export class PublicProfileViewComponent{
 	doContact(){
 		this.userService.createThread(this.localUser.id, this.user.id).then(data=>{
 			this.router.navigate(['/messages'])
+		});
+	}
+	
+	doReport(){
+		this.userService.reportUser(this.localUser.id, this.user.id, this.theReason).then(data=>{
+			alert("You have reported this user. Your report will be reviewed urgently and appropriate action will be taken.")
+			this.isReporting = false;
 		});
 	}
 }

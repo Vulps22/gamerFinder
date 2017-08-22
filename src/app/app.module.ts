@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule }   from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { CollapseModule } from 'ngx-bootstrap';
-
+import { ResponsiveModule } from 'ng2-responsive'
 
 import 'rxjs/add/operator/toPromise';
 
@@ -41,6 +41,7 @@ import { UserModule } from './user/user.module';
 	GameModule,
 	UserModule,
 	CollapseModule,
+	 ResponsiveModule,
 	AppRoutingModule
   ],
   providers: [],

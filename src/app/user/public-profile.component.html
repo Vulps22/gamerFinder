@@ -6,7 +6,18 @@
 			<h1 style="text-align: center">{{user.username}}</h1>
 			<p><a href="http://steamcommunity.com/profiles/{{user.steamID}}" class="btn btn-primary btn-outline btn-block"><i class="fa fa-steam-square" aria-hidden="true"></i> View Steam Profile</a></p>
 			<p><a class="btn btn-success btn-outline btn-block" (click)="doContact()"><i class="fa fa-envelope" aria-hidden="true"></i> Contact</a></p>
-			<p><a class="btn btn-danger btn-outline btn-block"><i class="fa  fa-exclamation-circle" aria-hidden="true"></i> Report Abuse</a></p>
+			<p *ngIf="!isReporting"><a class="btn btn-danger btn-outline btn-block" (click)="isReporting = true"><i class="fa  fa-exclamation-circle" aria-hidden="true"></i> Report Abuse</a></p>
+			<form #requestForm="ngForm" *ngIf="isReporting">
+				<div class="row">
+					<div class="col-md-12">
+						<select class="form-control" (change)="theReason = $event.target.value">
+							<option *ngFor="let reason of reasons" value="{{reason.id}}">{{reason.name}}</option>
+						</select>
+					</div>
+				</div>
+				<br>
+				<button type="submit" class="btn btn-primary btn-block btn-outline"(click)="doReport()">Submit</button>
+			</form>
 		</div>
 		<div class="col-md-9">
 			<div *ngFor="let request of requests" style="color: black">

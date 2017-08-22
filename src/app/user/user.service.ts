@@ -35,6 +35,21 @@ export class UserService {
 		
 	}
 	
+	reportUser(sender, target, reason){
+		
+		let params: URLSearchParams = new URLSearchParams();
+		params.set('sender', sender);
+		params.set('target', target);
+		params.set('reason', reason);
+	
+		let SERVICE_URL = "http://gamerfinder.net/classes/index.php?fn=userReport";
+		
+		let tempPromise = this.http.get(SERVICE_URL, new RequestOptions({"search": params}))
+		.catch(this.handleError);
+		return tempPromise.toPromise();
+		
+	}
+	
 	login(model){
 		
 		let params: URLSearchParams = new URLSearchParams();
