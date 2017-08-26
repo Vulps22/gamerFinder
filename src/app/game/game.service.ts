@@ -7,8 +7,8 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map'; 
 import 'rxjs/add/operator/catch'; 
 
-import { Game } from './Game';
-import { Request } from './request';
+import { Game } from './objects/Game';
+import { Request } from './objects/Request';
 
 @Injectable()
 export class GameService {

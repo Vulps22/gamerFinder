@@ -8,9 +8,9 @@ import { GameService } from './game.service';
 import 'rxjs/add/operator/switchMap';
 
 
-import { Game } from './Game';
-import { Request } from './request';
-import { User } from '../user/User';
+import { Game } from './objects/Game';
+import { Request } from './objects/Request';
+import { User } from '../user/objects/User';
 
 @Component({
   selector: 'games',

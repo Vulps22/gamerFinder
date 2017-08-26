@@ -6,9 +6,9 @@ import { Observable } from 'rxjs/Observable';
 import { GameService } from './game.service';
 
 
-import { Game } from './Game';
-import { Request } from './Request';
-import { User } from '../user/User';
+import { Game } from './objects/Game';
+import { Request } from './objects/Request';
+import { User } from '../user/objects/User';
 
 @Component({
   selector: 'request-form',

@@ -3,7 +3,7 @@ import { DropdownModule  } from 'ngx-dropdown';
 
 
 import { UserModule } from './user/user.module';
-import { User } from './user/User';
+import { User } from './user/objects/User';
 
 @Component({
   selector: 'nav-bar',

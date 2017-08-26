@@ -8,11 +8,11 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map'; 
 import 'rxjs/add/operator/catch'; 
 
-import { User } from './User';
-import { Register } from './Register';
-import { Message } from './Message';
-import { Thread } from './Thread';
-import { Request } from '../game/Request';
+import { User } from './objects/User';
+import { Register } from './objects/Register';
+import { Message } from './objects/Message';
+import { Thread } from './objects/Thread';
+import { Request } from '../game/objects/Request';
 
 @Injectable()
 export class UserService {
@@ -163,7 +163,7 @@ export class UserService {
 		params.set('sender', m.sender);
 		params.set('message', m.message);
 	
-		let SERVICE_URL = "http://gamerfinder.net/classes/index.php?fn=messageSend";
+		let SERVICE_URL = "http://gamerfinder.net/classes/index.php?fn=messageAcceptance";
 		
 		let tempPromise = this.http.get(SERVICE_URL, new RequestOptions({"search": params}))
 			.do(data=>{})
@@ -180,7 +180,8 @@ export class UserService {
 		let SERVICE_URL = "http://gamerfinder.net/classes/index.php?fn=messageCreate";
 		
 		let tempPromise = this.http.get(SERVICE_URL, new RequestOptions({"search": params}))
-		.catch(this.handleError);
+		.do(data=>{})
+		.map(response=>response.json())
 		return tempPromise.toPromise();
 	}
 	getRequestsFromUser(id){

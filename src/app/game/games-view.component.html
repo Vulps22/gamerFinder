@@ -9,27 +9,7 @@
 </div>
 
 <div class="col-md-8">
-<div *ngFor="let game of games">
-	<div *ngIf="!game.hidden" class="thumbnail" style="color: black" >
-		<div class="row" (click)="gameClicked(game.id)">
-			<div class="col-md-3">
-				<img #image src="http://cdn.edgecast.steamstatic.com/steam/apps/{{game.steamID}}/header.jpg" style="width: 100%; height: auto;" (error)="game.hidden = true">
-			</div>
-			<div class="col-md-9">
-				<div class="row">
-					<div class="col-md-12">
-						<h2>{{game.name}}</h2>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<p>{{game.count}} People want to play<span class="pull-right">Since: {{game.latest}}</span></p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+
 <div class="row">
 	<div class="col-md-12">
 		<div class="centerBlock">

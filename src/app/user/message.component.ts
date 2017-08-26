@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { User} from './User';
-import { Thread} from './Thread';
-import { Message} from './Message';
+import { User} from './objects/User';
+import { Thread} from './objects/Thread';
+import { Message} from './objects/Message';
 import { UserService } from './user.service';
 @Component({
   selector: 'message-view',

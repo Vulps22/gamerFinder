@@ -1,4 +1,4 @@
-import { User } from '../user/user';
+import { User } from '../../user/objects/User';
 import { Game } from './Game';
 export class Request {
 

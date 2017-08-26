@@ -9,9 +9,10 @@ import { UserService } from '../user/user.service';
 import 'rxjs/add/operator/switchMap';
 
 
-import { Game } from './Game';
-import { Request } from './Request';
-import { User } from '../user/User';
+import { Game } from './objects/Game';
+import { Request } from './objects/Request';
+import { User } from '../user/objects/User';
+import { Message } from '../user/objects/Message';
 
 @Component({
   selector: 'game-viewer',
@@ -99,6 +100,16 @@ export class GameViewComponent {
 		this.showForm = e;
 		this.btnTxt = "Your request has been submitted!";
 		this.doSetup(this.game.id);
+	}
+	
+	doAccept(request){
+		this.userService.createThread(this.user.id, request.user.id).then(data=>{
+			let message = new Message("-1", data, this.user.id, this.user.username + " has accepted your request to play " + this.game.name);
+			this.userService.sendMessage(message).then(data=>{
+				this.router.navigate(['/messages']);
+			});
+			
+		});
 	}
 	
 	

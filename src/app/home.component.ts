@@ -3,7 +3,7 @@ import { Headers, Http } from '@angular/http';
 import { OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GameService } from './game/game.service';
-import{ Game } from './game/Game';
+import{ Game } from './game/objects/Game';
 
 @Component({
   selector: 'home-page',

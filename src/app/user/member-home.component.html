@@ -6,6 +6,7 @@
 			<p>Total Games:</p>
 			<a class="btn btn-outline btn-block" (click)="tabSelected = 1" [ngClass]="{'btn-success': tabSelected == 1, 'btn-primary': tabSelected !=1}">Show Games</a>
 			<a class="btn btn-outline btn-block" (click)="tabSelected = 2" [ngClass]="{'btn-success': tabSelected == 2, 'btn-primary': tabSelected !=2}">Show Requests</a>
+			<a class="btn btn-outline btn-block" (click)="tabSelected = 3" [ngClass]="{'btn-success': tabSelected == 3, 'btn-primary': tabSelected !=3}"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a>
 		</div>
 		<div class="col-md-9">
 			<div *ngIf="tabSelected == 1">
@@ -42,6 +43,9 @@
 						</div>
 					</div>
 				</div>
+			</div><!--End of tab 2-->
+			<div *ngIf="tabSelected == 3">
+				<settings></settings>
 			</div>
 		</div>
 	</div>

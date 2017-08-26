@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { User } from './User';
-import { Game } from '../game/Game';
-import { Request } from '../game/Request';
+import { User } from './objects/User';
+import { Game } from '../game/objects/Game';
+import { Request } from '../game/objects/Request';
 
 import{ GameModule } from '../game/game.module';
 

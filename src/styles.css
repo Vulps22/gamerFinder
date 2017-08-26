@@ -4,6 +4,14 @@ body{
 	color: white!important;
 }
 
+.setting{
+	border-bottom-width:1px; 
+	border-bottom-style: solid!important; 
+	border-bottom-color: white;
+	padding-top:5px;
+	padding-bottom:3px;
+}
+
 .formPanel{
 	background-color: #363969;
 	padding-top: 2%;

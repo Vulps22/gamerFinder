@@ -8,7 +8,7 @@ import { GameModule } from '../game/game.module';
 import 'rxjs/add/operator/toPromise';
 
 import { RegisterComponent } from './register.component';
-import { LoginComponent } from './login.component';
+import { SettingsComponent } from './settings.component';
 import { MemberHomeComponent } from './member-home.component';
 import { MessageViewComponent } from './message.component';
 import { PublicProfileViewComponent } from './public-profile.component';
@@ -20,7 +20,7 @@ import { UserRoutingModule } from './user-routing.module';
 
 @NgModule({
   declarations: [
-	LoginComponent,
+	SettingsComponent,
 	RegisterComponent,
 	MemberHomeComponent,
 	MessageViewComponent,
@@ -36,7 +36,7 @@ import { UserRoutingModule } from './user-routing.module';
 	
   ],
   providers: [UserService],
-  exports: [LoginComponent]
+  exports: []
 })
 export class UserModule {
 

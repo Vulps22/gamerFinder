@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
-import { User } from './User';
-import { Request } from '../game/Request';
-import { Game } from '../game/Game';
+import { User } from './objects/User';
+import { Request } from '../game/objects/Request';
+import { Game } from '../game/objects/Game';
 
 import { UserService } from './user.service';
 
